@@ -70,6 +70,7 @@ header {
 }
 
 header .inner {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -82,7 +83,7 @@ header .inner {
     font-size: 26px;
 }
 
-.gnb {
+.gnb,.mobile-menu {
     text-transform: capitalize;
 }
 
@@ -118,7 +119,7 @@ header .inner {
 
 .mainVisual .textArea {
     text-align: right;
-    padding-top: clamp(40px, 14vw, 150px);
+    padding-top: clamp(40px, 22vw, 150px);
     padding-right: 10%;
 }
 
@@ -593,9 +594,13 @@ Mobile (max-width: 768px)
     footer {
         min-height: 40vh;
     }
+    footer .mainLogo {
+        bottom: 30%;
+    }
 
     footer span.text {
         font-size: 14px;
+        bottom: 10%;
     }
 }
 
@@ -617,6 +622,90 @@ Mobile (max-width: 768px)
         margin-bottom: 40px;
     }
 
+
+  .gnb {
+    display: none;
+  }
+
+  /* 햄버거 버튼 스타일 */
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 32px;
+    height: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 200;
+  }
+  
+  .menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 1.4px;
+    background: #000;
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    transform-origin: center;
+  }
+
+  /* 메뉴가 열린 상태 */
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(4px,4px);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(4px,-4px);
+  }
+
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background: #fff;
+    box-shadow: -2px 0 8px rgba(0,0,0,0.1);
+    padding: 20% 15%;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.2s ease;
+    z-index: 105;
+  }
+
+  .mobile-menu.active {
+    right: 0;
+  }
+
+    .mobile-menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .mobile-menu a {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+  }
+
+  body.menu-open { overflow: hidden; }
+}
+  /* 모바일 메뉴가 열렸을 때 스크롤 막기 */
+  body.menu-open {
+    overflow: hidden;
+  }
+
+
     .about .detail figure {
         width: 220px;
         height: 220px;
@@ -628,7 +717,7 @@ Mobile (max-width: 768px)
 
     .contactForm input,
     .contactForm textarea {
-        font-size: 14px;
+        font-size: 15px;
     }
 
     .contactForm button {

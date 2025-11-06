@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xpressengine/XEIcon@2.3.3/xeicon.min.css" />
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
 
 <body>
@@ -15,7 +16,25 @@
         <header class="header">
             <div class="inner">
                 <span class="logo"><a href="#">su+folio</a></span>
+
+                <!-- 모바일 메뉴 버튼 -->
+                <button class="menu-toggle" aria-label="메뉴 열기">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
                 <nav class="gnb">
+                    <ul>
+                        <li><a href="#">home</a></li>
+                        <li><a href="#">about</a></li>
+                        <li><a href="#">works</a></li>
+                        <li><a href="#">contact</a></li>
+                    </ul>
+                </nav>
+
+                <!-- 모바일용 메뉴 -->
+                <nav class="mobile-menu">
                     <ul>
                         <li><a href="#">home</a></li>
                         <li><a href="#">about</a></li>
@@ -172,7 +191,7 @@
                         <textarea name="message" id="message" rows="6" placeholder="내용을 입력하세요." required></textarea>
                     </div>
 
-                    <button type="submit">Send</button>
+                    <button type="submit">전송</button>
                 </form>
             </div>
         </section>
