@@ -8,7 +8,10 @@
     --color-gray: #767676;
     --color-middlegray: #e5e5e5;
     --color-lightgray: #f2f2f2;
-    --margin-top: 150px;
+    --margin-pc: 150px;
+    --margin-1024:120px;
+    --margin-768:80px;
+    --margin-480:60px;
 }
 
 .inner {
@@ -16,7 +19,7 @@
 }
 
 section {
-    margin-top: var(--margin-top);
+    margin-top: var(--margin-pc);
     padding: 3% 0 5%;
 }
 
@@ -29,10 +32,11 @@ p.mainTitle {
 }
 
 p.subTitle {
-    font-size: clamp(18px,4vw,36px);
+    font-size: clamp(20px,4vw,36px);
     text-transform: capitalize;
     line-height: 1.3;
     margin-bottom: 5px;
+    word-break: keep-all;
 }
 
 h2 {
@@ -44,9 +48,10 @@ h2 {
 }
 
 p.text {
-    font-size: 18px;
+    font-size: clamp(15px,2vw,18px);
     text-transform: capitalize;
     line-height: 1.6;
+    word-break: keep-all;
 }
 
 span.text {
@@ -113,7 +118,7 @@ header .inner {
 
 .mainVisual .textArea {
     text-align: right;
-    padding-top: clamp(40px,12vw,150px);
+    padding-top: clamp(40px,14vw,150px);
     padding-right: 10%;
 }
 
@@ -130,7 +135,7 @@ header .inner {
     padding: 5px 0;
     line-height: 1;
     text-transform: capitalize;
-    font-size: 18px;
+    font-size: clamp(15px,3vw,18px);
     font-weight: 500;
 }
 
@@ -188,14 +193,15 @@ header .inner {
     font-family: "Poppins", sans-serif;
     font-weight: 800;
     font-style: normal;
-    font-size: 22px;
+    font-size: clamp(18px,3vw,22px);
     text-transform: capitalize;
     line-height: 1.2;
 }
 
 .aboutMe li {
     margin-bottom: 5px;
-    font-size: 18px;
+    font-size: clamp(15px,2vw,18px);
+    word-break: keep-all;
 }
 
 .experience b {
@@ -219,10 +225,11 @@ header .inner {
 
 .story span.tag {
     display: inline-block;
-    padding: 0px 8px;
+    padding: clamp(1px, 0.2vw, 3px) clamp(3px, 1vw, 8px);
     background-color: var(--color-point);
     border-radius: 20px;
     font-weight: 500;
+    font-size: clamp(15px,2vw,18px);
 }
 
 /* workRoom */
@@ -238,7 +245,7 @@ header .inner {
 }
 
 .workList+.workList {
-    margin-top: var(--margin-top);
+    margin-top: var(--margin-pc);
 }
 
 .workList figure {
@@ -358,7 +365,7 @@ header .inner {
 
 .contactForm button {
     margin-top: 30px;
-    background: var(--color-gray);
+    background: #000;
     color: #fff;
     border: none;
     padding: 15px 0;
@@ -370,7 +377,7 @@ header .inner {
 }
 
 .contactForm button:hover {
-    background-color: #000;
+    background-color: var(--color-gray);
 }
 
 
@@ -423,6 +430,9 @@ footer span.text {
    Tablet (max-width: 1024px)
    ------------------------------ */
 @media (max-width: 1024px) {
+    section{
+        margin-top: var(--margin-1024);
+    }
     .inner {
         padding: 3% 5%;
     }
@@ -431,7 +441,7 @@ footer span.text {
         height: 70px;
     }
     .mainVisual{
-        height: calc(100vh - 70px);
+        height: 80vh;
     }
 
     .gnb ul {
@@ -481,6 +491,9 @@ footer span.text {
 Mobile (max-width: 768px)
    ------------------------------ */
 @media (max-width: 768px) {
+    section{
+        margin-top: var(--margin-768);
+    }
     header .inner {
         flex-direction: column;
         gap: 10px;
@@ -490,6 +503,9 @@ Mobile (max-width: 768px)
         flex-wrap: wrap;
         justify-content: center;
         gap: 20px;
+    }
+    .mainVisual{
+        height: 60vh;
     }
 
     .about .detail figure {
@@ -533,14 +549,13 @@ Mobile (max-width: 768px)
    Small Mobile (max-width: 480px)
    ------------------------------ */
 @media (max-width: 480px) {
+    section{
+        margin-top: var(--margin-480);
+    }
     body {
         font-size: 14px;
     }
     
-
-    .subTitle {
-        font-size: 24px;
-    }
 
     h2 {
         font-size: 20px;
