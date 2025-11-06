@@ -6,6 +6,7 @@
     --color-point: #3EE93E;
     --color-point2:#BCFFBC;
     --color-gray: #767676;
+    --color-middlegray:#e5e5e5;
     --color-lightgray: #f2f2f2;
     --margin-top: 150px;
 }
@@ -272,10 +273,17 @@ header .inner {
   margin-bottom: 8px;
   font-size: 20px;
 }
+.contactForm label::after{
+    content: '*';
+    color: var(--color-point);
+    font-size: 18px;
+    margin-left: 5px;
+    vertical-align: top;
+}
 
 .contactForm input {
   border: none;
-  border-bottom: 1.4px solid var(--color-lightgray);
+  border-bottom: 1.4px solid var(--color-middlegray);
   padding: 8px 4px;
   font-size: 24px;
   letter-spacing: -0.8px;
@@ -289,7 +297,7 @@ header .inner {
 
 .contactForm textarea {
   width: 100%;
-  border: 1.4px solid var(--color-lightgray);
+  border: 1.4px solid var(--color-middlegray);
   padding: 12px;
   font-size: 20px;
   resize: none;
