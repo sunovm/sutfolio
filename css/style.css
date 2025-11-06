@@ -24,7 +24,7 @@ section {
 }
 
 p.mainTitle {
-    font-size: clamp(16px,2vw,18px);
+    font-size: clamp(16px, 2vw, 18px);
     font-weight: 600;
     text-transform: uppercase;
     line-height: 1.2;
@@ -225,11 +225,12 @@ header .inner {
 
 .story span.tag {
     display: inline-block;
-    padding: clamp(1px, 0.2vw, 3px) clamp(3px, 1vw, 8px);
+    padding: clamp(2px, 1vw, 4px) clamp(3px, 2vw, 8px);
     background-color: var(--color-point);
     border-radius: 20px;
     font-weight: 500;
     font-size: clamp(15px, 2vw, 18px);
+    line-height: 1;
 }
 
 /* workRoom */
@@ -283,7 +284,7 @@ header .inner {
 .workList ul li {
     padding: 5px 10px;
     border-radius: 20px;
-    font-size: clamp(14px,2vw,15px);
+    font-size: clamp(14px, 2vw, 15px);
 }
 
 .workList ul.tags li {
@@ -303,6 +304,20 @@ header .inner {
     max-width: 800px;
     margin: 0 auto;
 }
+
+.contactForm input,
+.contactForm textarea {
+    -webkit-appearance: none;
+    /* iOS 기본 스타일 제거 */
+    appearance: none;
+    border-radius: 0;
+    /* 둥근 모서리 제거 */
+    background-color: transparent;
+    /* 배경 잔상 제거 */
+    box-shadow: none;
+    /* iOS 자동 그림자 제거 */
+}
+
 
 .contactForm .row {
     display: flex;
@@ -393,8 +408,8 @@ footer .tothetop {
     top: 5%;
     background-color: var(--color-gray);
     border-radius: 50%;
-    width: clamp(30px, 7vw, 90px);
-    height: clamp(30px, 7vw, 90px);
+    width: clamp(40px, 7vw, 90px);
+    height: clamp(40px, 7vw, 90px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -468,7 +483,7 @@ footer span.text {
     .workList,
     .workList:nth-child(2) {
         flex-direction: column;
-        gap: 30px;
+        gap: 20px;
         text-align: center;
     }
 
@@ -489,7 +504,7 @@ footer span.text {
         margin-right: 0;
     }
 
-    .workList .ul{
+    .workList .ul {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
@@ -554,7 +569,9 @@ Mobile (max-width: 768px)
     .workList+.workList {
         margin-top: var(--margin-768);
     }
-
+    .workList ul{
+        margin-bottom: 0;
+    }
     .contactForm .row {
         flex-direction: column;
         gap: 0;
@@ -568,6 +585,9 @@ Mobile (max-width: 768px)
     .contactForm input,
     .contactForm textarea {
         font-size: 16px;
+    }
+    .contactForm button{
+        margin-top: 0;
     }
 
     footer {
